@@ -1,0 +1,172 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="cont maincont">
+  <ul class="b-crumbs">
+    <li><a href="/">INICIO</a></li>
+    <li><a href="/cursos">CURSOS</a></li>
+    <li>Curso</li>
+  </ul>
+  <article>
+    <div class="prod">
+      <div class="prod-slider-wrap prod-slider-shown">
+        <div class="flexslider prod-slider" id="prod-slider">
+          <ul class="slides">
+            {% for cursimg in curso.cursoimagen_set.all %}
+            <li>
+              <a
+                data-fancybox-group="prod"
+                class="fancy-img"
+                href="{{cursimg.imagen.url}}"
+                ><img src="{{cursimg.imagen.url}}" alt="" />
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <div class="prod-slider-count">
+            <p>
+              <span class="count-cur">1</span> /
+              <span class="count-all">2</span>
+            </p>
+            <p class="hover-label prod-slider-zoom">
+              <i class="icon ion-search"></i><span>Zoom In</span>
+            </p>
+          </div>
+        </div>
+        <div class="flexslider prod-thumbs" id="prod-thumbs">
+          <ul class="slides">
+            {% for cursimg in curso.cursoimagen_set.all %}
+            <li>
+              <img src="{{cursimg.imagen.url}}" alt="" />
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="prod-cont">
+        <div class="prod-rating-wrap">
+          <p data-rating="4" class="prod-rating">
+            <i class="rating-ico" title="1"></i
+            ><i class="rating-ico" title="2"></i
+            ><i class="rating-ico" title="3"></i
+            ><i class="rating-ico" title="4"></i
+            ><i class="rating-ico" title="5"></i>
+          </p>
+          <p class="prod-rating-count">{{curso.popularidad}}</p>
+        </div>
+        <p class="prod-categs">
+          <a href="/cursos">{{curso.categoria.nombre}}</a>,
+          <a href="/cursos">{{curso.area.nombre}}</a>
+        </p>
+        <h1>{{curso.curso}}</h1>
+        <div class="variations_form cart">
+          <p class="prod-price">S/.{{curso.precio}}</p>
+          <p class="prod-excerpt">
+            {{curso.descripcion}} <!--<a
+              id="prod-showdesc"
+              class="prod-excerpt-more"
+              href="#"
+              >read more</a
+            >-->
+          </p>
+          <div class="prod-add">
+            <form action="/carrito/add/{{curso.id}}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="button">
+                <i class="icon ion-android-cart"></i> Agregar al Carrito
+              </button>
+              <!--
+              <p class="qnt-wrap prod-li-qnt">
+                <a href="#" class="qnt-plus prod-li-plus"
+                  ><i class="icon ion-arrow-up-b"></i
+                ></a>
+                <input type="text" value="1" name="cantidad" />
+                <a href="#" class="qnt-minus prod-li-minus"
+                  ><i class="icon ion-arrow-down-b"></i
+                ></a>
+              </p>
+              <div class="prod-li-favorites">
+                <a href="wishlist.html" class="hover-label add_to_wishlist"
+                  ><i class="icon ion-heart"></i><span>Add to Wishlist</span></a
+                >
+              </div>-->
+            </form>
+          </div>
+        </div>
+        <div class="prod-props">
+          <dl class="product_meta">
+            <dt>Cod.Curso:</dt>
+            <dd>{{curso.sku}}</dd>
+            <dt>Área:</dt>
+            <dd><a href="#">{{curso.area}}</a></dd>
+            <dt>Horas:</dt>
+            <dd>{{curso.duracion}}</dd>
+            <dt>Estudiantes:</dt>
+            <dd>{{curso.estudiantes}}</dd>
+            <dt>Idioma:</dt>
+            <dd>{{curso.idioma}}</dd>
+            <dt>Dificultad</dt>
+            <dd>{{curso.dificultad}}</dd>
+            <dt>Profesor:</dt>
+            <dd>{{curso.profesor}}</dd>
+            <dt>F. Apertura:</dt>
+            <dd>{{curso.fecha_lanzamiento}}</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div class="prod-tabs-wrap">
+    <ul class="prod-tabs">
+      <li id="prod-desc" class="active" data-prodtab-num="1">
+        <a data-prodtab="#prod-tab-1" href="#">Descripcion</a>
+      </li>
+      <li data-prodtab-num="2" id="prod-props">
+        <a data-prodtab="#prod-tab-2" href="#">Lo que aprenderás!</a>
+      </li>
+    </ul>
+    <div class="prod-tab-cont">
+      <p
+        data-prodtab-num="1"
+        class="prod-tab-mob active"
+        data-prodtab="#prod-tab-1"
+      >
+        Description
+      </p>
+      <div class="prod-tab page-styling prod-tab-desc" id="prod-tab-1">
+        <p>{{curso.descripcion}}</p>
+      </div>
+      <div class="prod-tab" id="prod-tab-2">
+        <p>-{{curso.nota_a}}</p>
+        <br>
+        <p>-{{curso.nota_b}}</p>
+        <br>
+        <p>-{{curso.nota_c}}</p>
+        <!--
+        <dl class="prod-tab-props">
+          <dt>Weight</dt>
+          <dd>1 kg</dd>
+          <dt>Dimensions</dt>
+          <dd>4 x 50 cm</dd>
+          <dt>Сolor</dt>
+          <dd>
+            <p><a href="#">Blue</a>, <a href="#">Green</a></p>
+          </dd>
+          <dt>Manufacturer</dt>
+          <dd>
+            <p><a href="#">Germany</a></p>
+          </dd>
+          <dt>Material</dt>
+          <dd>
+            <p><a href="#">Metall</a>, <a href="#">Plastic</a></p>
+          </dd>
+        </dl>-->
+      </div>
+      <p data-prodtab-num="3" class="prod-tab-mob" data-prodtab="#prod-tab-3">
+        Reviews (7)
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
