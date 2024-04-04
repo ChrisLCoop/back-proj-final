@@ -1,0 +1,30 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="cont maincont">
+  <h1 class="maincont-ttl">Cuenta de {{user.username}}</h1>
+  <article class="page-cont">
+    <div class="page-styling">
+      <div class="auth-wrap">
+        <div class="auth-col">
+          <h2>Mis Compras</h2>
+          <div class="cont maincont">
+            
+            <!-- To make Sidebar "Not Sticky" just remove  id="section-list-withsb" -->
+            <div class="section-wrap-withsb">
+              <div class="section-list-withsb" id="section-list-withsb">
+                <div class="theiaStickySidebar">
+                  {%include 'includes/mis_compras/mis_cursos.html' %}
+                </div>
+                <!-- .theiaStickySidebar -->
+              </div>
+              <!-- .section-list-withsb -->
+            </div>
+            <!-- .section-wrap-withsb -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+{% endblock %}
