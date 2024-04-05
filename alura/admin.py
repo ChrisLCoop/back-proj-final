@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 
 from .models import(
-    Categoria,Area,Curso,CursoImagen
+    Categoria,Area,Curso,CursoImagen,Pedido,PedidoDetalle
 )
 
 admin.site.register(Categoria)
@@ -27,3 +27,11 @@ class CursoImagenAdmin(admin.ModelAdmin):
 
     list_display = ('orden','curso','imagen_html')
     search_fields = ['curso__curso']
+
+@admin.register(Pedido)
+class PedidoAdmin(admin.ModelAdmin):
+    list_display = ('cliente_id','id','fecha_registro','nro_pedido','monto_total','estado')
+
+@admin.register(PedidoDetalle)
+class PedidoDetalleAdmin(admin.ModelAdmin):
+    list_display = ('pedido','producto','cantidad','subtotal','pedido_id')

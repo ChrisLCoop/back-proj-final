@@ -45,19 +45,20 @@ def carrito(request):
     return render(request, 'carrito.html')
 
 def agregar_carrito(request,curso_id):
+    """
     if request.method == 'POST':
         cantidad = int(request.POST['cantidad'])
-    else:
-        cantidad = 1
+    else:"""
+    cantidad = 1
     obj_curso = Curso.objects.get(pk=curso_id)
     curso_imagenes = CursoImagen.objects.filter(curso=obj_curso)
     print(curso_imagenes[0])
 
     carrito = Cart(request)
     carrito.add(obj_curso,cantidad,curso_imagenes[0].imagen.url)
-
+    """
     if request.method == 'GET':
-        return redirect('/cursos')
+        return redirect('/cursos')"""
 
     return render(request,'carrito.html')
 
@@ -285,9 +286,12 @@ def registrar_pedido(request):
         obj_pedido = Pedido()
         obj_pedido.cliente = obj_cliente
         obj_pedido.save()
+        
         nro_pedido = 'PEP' + obj_pedido.fecha_registro.strftime('%Y')+ str(obj_pedido.id)
         obj_pedido.nro_pedido = nro_pedido
         obj_pedido.save()
+        #
+        
 
         carrito = request.session.get('cart')
         for key,value in carrito.items():
@@ -298,7 +302,10 @@ def registrar_pedido(request):
             obj_pedido_detalle.cantidad = int(value['cantidad'])
             obj_pedido_detalle.subtotal = float(value['subtotal'])
             obj_pedido_detalle.save()
-
+            #
+            
+            
+        
         ## btn paypal
         paypal_dict = {
         "business": "sb-qyxr130010752@business.example.com",
@@ -335,6 +342,15 @@ def gracias(request):
         carrito.clear()
 
     return render(request,'gracias.html')
+
+@login_required(login_url='/login')
+def mis_compras(request):
+    user_id = str(request.user.id)
+    mis_cursos = PedidoDetalle.objects.filter(pedido_id__estado =1).filter(pedido_id__cliente_id__usuario_id__id = user_id)
+    context ={
+        'mis_cursos':mis_cursos
+    }
+    return render(request,'mis_compras.html',context)
 
 @login_required(login_url='/login')
 def view_that_asks_for_money(request):

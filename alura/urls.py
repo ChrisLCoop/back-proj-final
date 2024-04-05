@@ -20,4 +20,5 @@ urlpatterns =[
     path('paypaltest',views.view_that_asks_for_money,name='paypaltest'),
     path('gracias',views.gracias,name='gracias'),
     path('',views.paginaalura,name='home'),
+    path('mis_compras',views.mis_compras,name='mis_compras'),
 ]
