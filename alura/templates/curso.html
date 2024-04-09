@@ -208,11 +208,14 @@
     </div>
   </div>
 </div>
+<br>
 <div class="container">
-  <div class="container-fluid">
+  <div class="container-fluid fw-bold">
     <h2>Contenido del curso</h2>
+    <br>
     <div class="container-fluid">
-      <p>10 secciones °30 claces °{{curso.duracion}} Horas de duracion total</p>
+      <p>10 Sesiones de °30 clases °{{curso.duracion}} Horas de duracion en total</p>
+      <br>
     </div>
     <div class="container">
       <div class="accordion" id="accordionExample">
@@ -220,12 +223,12 @@
           <div class="card-header" id="headingOne">
             <h2 class="mb-0">
               <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <div class="container-fluid d-flex justify-content-between">
-                  <div class="container-fluid d-flex">
-                    <span>{{curso.seccion_conten_titulo_a}}</span>
+                <div class="container-fluid ">
+                  <div class="container-fluid">
+                    <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_a}}</span>
                   </div>
-                  <div class="container-fluid d-flex">
-                    <span>3_claces_con_duracion_de:10_min</span>
+                  <div class="container-fluid">
+                    <span class="text-dark"> > °3 clases con duracion de: °45 min</span>
                   </div>
                 </div>
               </button>
@@ -236,12 +239,12 @@
             <div class="card-body">
               <div class="container d-flex flex-column">
                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalScrollable">
-                  {{curso.seccion_a_detalle_a}}
+                  <p>{{curso.seccion_a_detalle_a}}</p>
                 </button>
                 <br>
-                <a href="">°{{curso.seccion_a_detalle_b}}</a>
+                <a href="" class="text-dark ">°{{curso.seccion_a_detalle_b}}</a>
                 <br>
-                <p>°{{curso.seccion_a_detalle_c}}</p>
+                <p class="text-dark">°{{curso.seccion_a_detalle_c}}</p>
               </div>
               <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -295,9 +298,9 @@
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_b}}</span>
-                  <span>_°5 claces °30 min</span>
+                <div class="container">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_b}}</span>
+                  <span class="text-dark"> > °5 clases °35 min</span>
                 </div>
               </button>
             </h2>
@@ -370,8 +373,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_c}}</span>
-                  <span>_3 claces°10min</span>
+                  <span  class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_c}}</span>
+                  <span  class="text-dark"> > °3 clases °45min</span>
                 </div>
               </button>
             </h2>
@@ -379,11 +382,11 @@
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
               <div class="container d-flex flex-column">
-                <p>°{{curso.seccion_c_detalle_a}}</p>
+                <p class="text-dark">°{{curso.seccion_c_detalle_a}}</p>
                 <br>
-                <p>°{{curso.seccion_c_detalle_b}}</p>
+                <p class="text-dark">°{{curso.seccion_c_detalle_b}}</p>
                 <br>
-                <p>°{{curso.seccion_c_detalle_c}}</p>
+                <p class="text-dark">°{{curso.seccion_c_detalle_c}}</p>
               </div>
             </div>
           </div>
@@ -393,8 +396,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseD" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_d}}</span>
-                  <span>_3 claces°10min</span>
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_d}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
                 </div>
               </button>
             </h2>
@@ -402,9 +405,9 @@
           <div id="collapseD" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
               <div class="container d-flex flex-column">
-                <p>°{{curso.seccion_d_detalle_a}}</p>
+                <p class="text-dark">°{{curso.seccion_d_detalle_a}}</p>
                 <br>
-                <p>°{{curso.seccion_d_detalle_b}}</p>
+                <p class="text-dark">°{{curso.seccion_d_detalle_b}}</p>
                 
               </div>
             </div>
@@ -415,8 +418,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseE" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_e}}</span>
-                  <span>_3 claces°10min</span>
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_e}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
                 </div>
               </button>
             </h2>
@@ -438,8 +441,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseF" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_f}}</span>
-                  <span>_3 claces°10min</span>
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_f}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
                 </div>
               </button>
             </h2>
@@ -460,8 +463,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseG" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_g}}</span>
-                  <span>_3 claces°10min</span>
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_g}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
                 </div>
               </button>
             </h2>
@@ -484,8 +487,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseH" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_h}}</span>
-                  <span>_3 claces°10min</span>
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_h}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
                 </div>
               </button>
             </h2>
@@ -509,8 +512,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseI" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_i}}</span>
-                  <span>_3 claces°10min</span>
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_i}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
                 </div>
               </button>
             </h2>
@@ -534,8 +537,8 @@
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseJ" aria-expanded="false" aria-controls="collapseThree">
                 <div class="container d-flex">
-                  <span>{{curso.seccion_conten_titulo_j}}</span>
-                  <span>_3 claces°10min</span>
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_j}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
                 </div>
               </button>
             </h2>
@@ -553,6 +556,8 @@
     </div>
   </div>
 </div>
+<br>
+<br>
 
 
 
