@@ -11,7 +11,7 @@ admin.site.register(Area)
 #admin.site.register(Curso)
 @admin.register(Curso)
 class CursoAdmin(admin.ModelAdmin):
-    list_display = ('sku','curso','categoria','area','precio','dificultad','profesor','idioma')
+    list_display = ('id','sku','curso','categoria','area','precio','dificultad','profesor','idioma')
     list_filter = ('categoria','area')
 
 from django.utils.html import format_html
