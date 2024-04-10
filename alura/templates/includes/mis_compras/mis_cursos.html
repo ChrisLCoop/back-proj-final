@@ -5,7 +5,7 @@
       <tr>
         
         <th class="text-primary" scope="col">Curso</th>
-        <th class="text-primary" scope="col">Cantidad</th>
+        <!-- <th class="text-primary" scope="col">Cantidad</th> -->
         <th class="text-primary" scope="col">Total</th>
       </tr>
     </thead>
@@ -13,7 +13,7 @@
       {% for curso in mis_cursos %}
       <tr>
         <td><a href="curso/{{curso.producto_id}}">{{curso}}</a></td>
-        <td class="text-primary">{{curso.cantidad}}</td>
+        <!-- <td class="text-primary">{{curso.cantidad}}</td> -->
         <td class="text-primary">{{curso.subtotal}}</td>
       </tr>
       {% endfor %}
