@@ -13,8 +13,8 @@
       {% for curso in mis_cursos %}
       <tr>
         <td><a href="curso/{{curso.producto_id}}">{{curso}}</a></td>
-        <td>{{curso.cantidad}}</td>
-        <td>{{curso.subtotal}}</td>
+        <td class="text-primary">{{curso.cantidad}}</td>
+        <td class="text-primary">{{curso.subtotal}}</td>
       </tr>
       {% endfor %}
     </tbody>
