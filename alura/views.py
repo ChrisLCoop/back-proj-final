@@ -12,6 +12,26 @@ from alura.forms import Comentarioformulario
 #from django.http import HttpResponse
 
 # Create your views here.
+def cursos1(request):
+    return render(request,'cursos1.html')
+def data(request):
+    return render(request,'data-science.html')
+def devops(request):
+    return render(request,'devops.html')
+def front(request):
+    return render(request,'front-end.html')
+def innovation(request):
+    return render(request,'innovation.html')
+def mobile(request):
+    return render(request,'mobile.html')
+def program(request):
+    return render(request,'program.html')
+def ux(request):
+    return render(request,'ux-design.html')
+
+def pagina_informacion(request):
+    return render(request,'pagina_informacion.html')
+
 def paginaalura(request):
     return render(request,'home.html')
 
@@ -79,7 +99,7 @@ class cursocomentariovista(LoginRequiredMixin, SingleObjectMixin, FormView):
         return super().form_valid(form)
     
     def get_success_url(self):
-        return reverse('curso', kwargs={'pk': self.object.pk}) + '#comments-section'
+        return reverse('curso', kwargs={'pk': self.object.pk})
 
 class Cursovista(View):
     

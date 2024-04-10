@@ -21,5 +21,13 @@ urlpatterns =[
     path('',views.paginaalura,name='home'),
     path('mis_compras',views.mis_compras,name='mis_compras'),
     path('curso/<int:pk>',views.Cursovista.as_view(),name='curso'),
-
+    path('paginainformacion',views.pagina_informacion,name='pagina_informacion'),
+    path('cursos1',views.cursos1,name='cursos1'),
+    path('data',views.cursos1,name='data'),
+    path('devops',views.cursos1,name='devops'),
+    path('front',views.cursos1,name='front'),
+    path('innovation',views.cursos1,name='innovation'),
+    path('mobile',views.cursos1,name='mobile'),
+    path('program',views.cursos1,name='program'),
+    path('ux',views.cursos1,name='ux'),
 ]

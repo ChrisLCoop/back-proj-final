@@ -173,6 +173,7 @@
 <div class="container">
   <div class="container d-flex flex-column align-items-center">
     <h2>Lo que aprenderás</h2>
+    <br>
     <div class="container d-flex justify-content-between ">
       <ul class="list-group">
         <li class="list-group-item border-0">{{curso.nota_a}}</li>
@@ -191,9 +192,13 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
 <div class="container">
   <div class="container-fluid d-flex flex-column align-items-center">
     <h2>Este curso incluye:</h2>
+    <br>
     <div class="container d-flex justify-content-between">
       <ul class="list-group">
         <li class="list-group-item border-0">{{curso.inclu_a}}</li>
@@ -208,6 +213,8 @@
     </div>
   </div>
 </div>
+<br>
+<br>
 <br>
 <div class="container">
   <div class="container-fluid fw-bold">
@@ -558,6 +565,7 @@
 </div>
 <br>
 <br>
+
 <div class="container container-fluid d-flex justify-content-center">
   <div class="">
   <h3 id="comments-section" class="form-label">Comentario</h3>
@@ -570,29 +578,5 @@
   </form>
   </div>
 </div>
-
-{% for comentarios in post.context.all %}
-  <div class="container">
-    <h2 class="mt-4 mb-4">Reseñas de Clientes</h2>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Cliente</th>
-                    <th>Fecha</th>
-                    <th>Comentario</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ comentarios.author.username }}</td>
-                    <td>{{ comentarios.fecha_comentario }}</td>
-                    <td>{{ comentarios.content }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-  </div>
-{% endfor %}
 
 {% endblock %}

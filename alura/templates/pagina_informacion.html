@@ -1,0 +1,410 @@
+{% load static %}
+{% include 'includes/header-home.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pagina_informacion.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <title>Document</title>
+</head>
+<body>
+    <main class="como_funciona"> 
+        <section class="texto_principal">
+            <h1 class="titulo_principal">Como funciona <strong>estudiar</strong> en Alura?</h1>
+            <p class="p_principal">Descubre todos los recursos de la plataforma, donde tendrás mucho más de <strong>1450 cursos</strong>  de tecnología</p>
+        </section>
+        <div class="contenedor_grande">
+
+        <section class="contenedor">
+            <div class="div_subtitulo">
+                <h2 class="seccion_titulos">Como son los cursos?</h2>
+                <p class="p_seccion">Estudiarás con <strong>videoclases de alta calidad,</strong> ejercicios prácticos, proyectos y en una comunidad activa con muchas discusiones. Cursos creados y producidos por profesionales brasileños.</p>
+                    <a class="botom" href="/login">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        QUIERO INSCRIBIRME!
+                    </a>
+            </div>
+            <div class="div_img">
+                <img class="imagenes_seccion imagen1" src="{% static 'img/galeria_brandon/imagen1.webp' %}" alt="imagen">
+            </div>
+        </section>
+
+        <section class="contenedor2">
+            <div class="div_img">
+                <img class="imagenes_seccion imagen2" src="{% static 'img/galeria_brandon/imagen2.webp' %}" alt="imagen">
+            </div>
+            <div class="div_subtitulo">
+                <h2 class="seccion_titulos">Como son los cursos?</h2>
+                <p class="p_seccion">Tienes acceso a <strong>más de 1450 cursos</strong> de tecnología, diseño y negocios digitales, con nuevos lanzamientos todas las semanas. En Alura encontrarás cursos que van de programación ao diseño, pasando por front-end, móvil y marketing digital. Aprendizado estruturado, com a didática de quem sabe ensinar y é reconhecido no mercado de trabajo.</p>
+                <a class="botom" href="/login">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    QUIERO INSCRIBIRME!
+                </a>
+            </div>
+        </section>
+
+        <section class="contenedor3">
+            <div class="cuadrado">
+                <a href="curso/1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#00B968" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 8l-4 4l4 4" />
+                    <path d="M17 8l4 4l-4 4" />
+                    <path d="M14 4l-4 16" />
+                  </svg>
+                <h2 class="h2-1">Escuela_</h2>
+                <h1 class="h1-1">PROGRAMACIÓN</h1>
+                <p>Logica, Python, PHP, Java, .NET, Node JS, C, Computacion, Jogos, IoT y mas...</p>
+                </a>
+            </div>
+            <div class="cuadrado">
+                <a href="curso/2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-imac-code" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#69CDFB" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M11.5 17h-7.5a1 1 0 0 1 -1 -1v-12a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v9" />
+                    <path d="M3 13h18" />
+                    <path d="M8 21h3.5" />
+                    <path d="M10 17l-.5 4" />
+                    <path d="M20 21l2 -2l-2 -2" />
+                    <path d="M17 17l-2 2l2 2" />
+                  </svg>
+                <h2 class="h2-2">Escuela_</h2>
+                <h1 class="h1-2">FRONT-END</h1>
+                <p>HTML, CSS, React, Angular, Javascript, JQuery y mas</p>
+                </a>
+            </div>
+            <div class="cuadrado">
+                <a href="curso/3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-atom" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#96CD3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 12v.01" />
+                    <path d="M19.071 4.929c-1.562 -1.562 -6 .337 -9.9 4.243c-3.905 3.905 -5.804 8.337 -4.242 9.9c1.562 1.561 6 -.338 9.9 -4.244c3.905 -3.905 5.804 -8.337 4.242 -9.9" />
+                    <path d="M4.929 4.929c-1.562 1.562 .337 6 4.243 9.9c3.905 3.905 8.337 5.804 9.9 4.242c1.561 -1.562 -.338 -6 -4.244 -9.9c-3.905 -3.905 -8.337 -5.804 -9.9 -4.242" />
+                  </svg>
+                <h2 class="h2-3">Escuela_</h2>
+                <h1 class="h1-3">CIENCIA DE DATOS</h1>
+                <p>Ciencia de datos, BI, SQL y Base de datos, Excel, Machine Learning, NoSQL, Estadistica y mas</p>
+                </a>
+            </div>
+            <div class="cuadrado">
+                <a href="curso/4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-topology-star-ring" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#7B71FF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 20a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z" />
+                    <path d="M14 4a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z" />
+                    <path d="M6 12a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z" />
+                    <path d="M22 12a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z" />
+                    <path d="M14 12a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z" />
+                    <path d="M6 12h4" />
+                    <path d="M14 12h4" />
+                    <path d="M13.5 5.5l5 5" />
+                    <path d="M5.5 13.5l5 5" />
+                    <path d="M13.5 18.5l5 -5" />
+                    <path d="M10.5 5.5l-5 5" />
+                    <path d="M12 6v4" />
+                    <path d="M12 14v4" />
+                  </svg>
+                <h2 class="h2-4">Escuela_</h2>
+                <h1 class="h1-4">INTELIGENCIA ARTIFICIAL</h1>
+                <p>IA para programacion, IA para datos y mas...</p>
+                </a>
+            </div>
+            <div class="cuadrado">
+                <a href="curso/5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-nut" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#DD5A5F" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M19 6.84a2.007 2.007 0 0 1 1 1.754v6.555c0 .728 -.394 1.4 -1.03 1.753l-6 3.844a1.995 1.995 0 0 1 -1.94 0l-6 -3.844a2.006 2.006 0 0 1 -1.03 -1.752v-6.557c0 -.728 .394 -1.399 1.03 -1.753l6 -3.582a2.049 2.049 0 0 1 2 0l6 3.582h-.03z" />
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  </svg>
+                <h2 class="h2-5">Escuela_</h2>
+                <h1 class="h1-5">DEVOPS</h1>
+                <p>AWS, Azure, Docker, Seguridad, Iac, Linux y mas...</p>
+                </a>
+            </div>
+            <div class="cuadrado">
+                <a href="curso/6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#DC6EBE" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                    <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                  </svg>
+                <h2 class="h2-6">Escuela_</h2>
+                <h1 class="h1-6">UX Y DISEÑO</h1>
+                <p>Usabilidad y UX, Video y Motivación, 3D y mas...</p>
+                </a>
+            </div>  
+            <div class="cuadrado">
+                <a href="curso/7">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-mobile-code" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#FDB905" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M11.5 21h-3.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8" />
+                    <path d="M20 21l2 -2l-2 -2" />
+                    <path d="M17 17l-2 2l2 2" />
+                    <path d="M11 4h2" />
+                    <path d="M12 17v.01" />
+                  </svg>
+                <h2 class="h2-7">Escuela_</h2>
+                <h1 class="h1-7">MÓVIL</h1>
+                <p>React Native, Flutter, iOS y Swift, Android, Kotlin, Juegos y más...</p>
+                </a>
+            </div>
+            <div class="cuadrado">
+                <a href="curso/8">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bulb" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#FF8C2A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" />
+                    <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
+                    <path d="M9.7 17l4.6 0" />
+                  </svg>
+                <h2 class="h2-8">Escuela_</h2>
+                <h1 class="h1-8">INNOVACIÓN Y GESTIÓN</h1>
+                <p>Métodos Ágiles, Softskills, Liderazgo y Gestión, Startups, Ventas y más...</p>
+                </a>
+            </div>
+        </section>
+
+
+        <section class="contenedor2">
+            <div class="div_img-4">
+                <img class="svg1" src="{% static 'img/svg_brandon/notebook-background-details.1697220797.svg' %}" alt="">
+                <img class="imagenes_seccion laptop" src="{% static 'img/galeria_brandon/imagen3.png' %}" alt="imagen">
+            </div>
+            <div class="div_subtitulo">
+                <h2 class="seccion_titulos">Como son los cursos?</h2>
+                <p class="p_seccion">Un foro con más de <strong>700 mil mensajes </strong>que no para de crecer. Você participa dessa comunidade e não fica estudando online sozinho!</p>
+                <a class="botom" href="/login">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    QUIERO INSCRIBIRME!
+                </a>
+            </div>
+        </section>
+        </div>
+        <section class="contenedor5">
+            <div class="borde-top"></div>
+            <div class="rectangulo">
+                <h2>La mayor y mejor plataforma brasileña de cursos de tecnología. <strong>¡Profundiza en tu carrera!</strong></h2>
+            </div>
+            <div class="borde-bottom"></div>
+        </section>
+
+        <section class="contenedor2">
+            <div class="div_img astronauta-div">
+                <img class="imagenes_seccion astronauta" src="{% static 'img/galeria_brandon/imagen4.webp' %}" alt="imagen">
+            </div>
+            <div class="div_subtitulo div6">
+                <h2 class="seccion_titulos">¿Cómo ayuda esto a mi carrera?</h2>
+                <p class="p_seccion">Adquirirás conocimientos prácticos y participarás en una comunidad <strong>apasionada por la tecnología. </strong>No solo bucearás y profundizarás en tu campo, sino que también navegarás en temas relacionados, un verdadero <strong>profesional en /T. </strong>Queremos que practiques y crees un portafolio increíble.</p>
+                <a class="botom" href="">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    QUIERO INSCRIBIRME!
+                </a>
+            </div>
+        </section>
+
+
+        <section class="contenedor">
+            <div class="div_subtitulo">
+                <h2 class="seccion_titulos">¿Con qué curso empezaré?</h2>
+                <p class="p_seccion">¿Preocupado por la gran cantidad de opciones? Están organizados en planes de estudio, llamados cursos de <strong>formación,</strong> donde tendrás una secuencia estructurada de cursos, además de podcasts, artículos y vídeos extra.</p>
+                    <a class="botom" href="">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        QUIERO INSCRIBIRME!
+                    </a>
+            </div>
+            <div class="div_img div7-img">
+                <img class="imagenes_seccion imagen7" src="{% static 'img/galeria_brandon/imagen5.webp' %}" alt="imagen">
+            </div>
+        </section>
+
+
+        <section class="contenedor2 contenedor8">
+            <div class="div_img">
+                <img class="imagenes_seccion imagen-seccion8" src="{% static 'img/galeria_brandon/imagen6.webp' %}" alt="imagen">
+            </div>
+            <div class="div_subtitulo">
+                <h2 class="seccion_titulos">Como son los cursos?</h2>
+                <p class="p_seccion">Tienes acceso a <strong>más de 1450 cursos</strong> de tecnología, diseño y negocios digitales, con nuevos lanzamientos todas las semanas. En Alura encontrarás cursos que van de programación ao diseño, pasando por front-end, móvil y marketing digital. Aprendizado estruturado, com a didática de quem sabe ensinar y é reconhecido no mercado de trabajo.</p>
+                <a class="botom" href="">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    QUIERO INSCRIBIRME!
+                </a>
+            </div>
+        </section>
+
+
+        <section class="contenedor9">
+            <h2>Es mucho más</h2>
+            <p>También disponemos de <strong>planes corporativos </strong>con informes generados para el seguimiento de tu sector de RRHH, así como toda una plataforma destinada a introducir a jóvenes y adolescentes en el mundo de la tecnología - <strong>Alura Start, </strong>y otra orientada al aprendizaje de idiomas - <strong>Alura Língua.</strong></p>
+        </section>
+
+
+        <section class="contenedor-separador">
+        <div class="separador"></div>
+        </section>
+
+
+    <section class="contenedor10">
+        <h1>¿Sabes cuándo puedes empezar? <strong>¡Ahora!</strong></h1>
+        <div class='cuadros'>
+                    <div class="card">
+                        <img src="{% static 'img/galeria_brandon/libro1.svg' %}" class="icono-card" alt="">
+                        <img src="{% static 'img/galeria_brandon/logolibro1.svg' %}" class="imagen-card" alt="">
+                        <h3 class="card-text-plus">PLUS</h3>
+                        <div class="linea1-precio">
+                            <div class="card-precios">
+                                <div class="precio1">
+                                    <div>De</div>
+                                    <span class="precios linea-precios">PE$ 1.400</span>
+                                    <div>por</div>
+                                </div>
+                                <div class="precio2">
+                                    <span class="span12x">12x</span>
+                                    <span class="precios precio80">PE$80</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="efectivo">en efectivo PE$ 1.300</p>
+                        <ul>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Acesso a TODOS los cursos de alura <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Alura challenges <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Casos alura <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Certificado <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                        </ul>
+                        <a class="MATRICULATE" href="">MATRICULATE</a>
+                    </div>
+                    <div class="card2">
+                        <div class="texto-img"></div>
+                        <div class="icono-img"></div>
+                        <img src="{% static 'img/galeria_brandon/libro1.svg' %}" class="icono-card" alt="">
+                        <img src="{% static 'img/galeria_brandon/logolibro1.svg' %}" class="imagen-card" alt="">
+                        <h3 class="card-text-plus">PLUS</h3>
+                        <div class="linea1-precio">
+                            <div class="card-precios">
+                                <div class="precio1">
+                                    <div>De</div>
+                                    <span class="precios linea-precios">PE$ 1.800</span>
+                                    <div>por</div>
+                                </div>
+                                <div class="precio2">
+                                    <span class="span12x">12x</span>
+                                    <span class="precios precio80">PE$140</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="efectivo">en efectivo PE$ 1.300</p>
+                        <ul>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Acesso a TODOS los cursos de alura <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Alura challenges <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Casos alura <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                            <li><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt="">Certificado <img src="{% static 'img/svg_brandon/interrogacion.svg' %}" alt=""></li>
+                            <li class="borde-lista"><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt=""><strong>Luri</strong> Impulsado por ChatGPT<img src="{% static '/SVG/interrogacion.svg' %}" alt=""></li>
+                            <li class="borde-lista"><img class="check" src="{% static 'img/svg_brandon/CHECK.svg' %}" alt=""><strong>Alura idioma</strong> (Incluido curso de ingles para Devs) <img src="{% static '/SVG/interrogacion.svg' %}" alt=""></li>
+                        </ul>
+                        <a class="MATRICULATE" href="">MATRICULATE</a>
+                    </div>
+        </div>
+        <a class="planos-para-empresa" href="">descubre los planes para empresas</a>
+    </section>
+    <section class="contenedor">
+        <div class="div_subtitulo sub">
+            <h2 class="seccion_titulos">Como son los cursos?</h2>
+            <p class="p_seccion seccion11">Estudiarás con <strong>videoclases de alta calidad,</strong> ejercicios prácticos, proyectos y en una comunidad activa con muchas discusiones. Cursos creados y producidos por profesionales brasileños.</p>
+            <a class="botom" href="">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                QUIERO INSCRIBIRME!
+            </a>        </div>
+        <div class="div_img">
+            <img class="imagenes_seccion" src="{% static 'img/galeria_brandon/imagen1.webp' %}" alt="imagen">
+        </div>
+    </section>
+
+    <section class="contenedor-separador">
+        <div class="separador"></div>
+    </section>
+
+    <section class="contenedor12">
+        <div>
+            <img src="{% static 'img/svg_brandon/calendarioicono.svg' %}" alt="">
+            <p>Acceso completo durante un anio</p>
+        </div>
+        <div>
+            <img src="{% static 'img/svg_brandon/loadingsvg.svg' %}" alt="">
+            <p>Estudia las 24 horas del día donde sea y cuando quieras</p>
+        </div>
+        <div>
+            <img src="{% static 'img/svg_brandon/nochevelozsvg.svg' %}" alt="">
+            <p>Nuevos cursos a la semana</p>
+        </div>
+    </section>
+
+    <section class="contenedor13">
+        <div class="seccion13-p">
+            <div class="pregunta">
+                <h1 class="Dudas">Dudas
+                </h1>
+                <strong class="Frecuentes">Frecuentes</strong>
+            </div>
+            <div class="letras">
+                <span class="letraA"></span>
+                <span class="letragira"></span>
+            </div>
+        </div>
+        <div>
+            <details class="d1">
+                <summary>01. ¿Para quién es Alura?</summary>
+                <p>Alura es la escuela de tecnología en línea más grande de Brasil, que ofrece cursos en las áreas de programación, front-end, DevOps, móvil, ciencia de datos, UX y diseño, inteligencia artificial y gestión e innovación. Los cursos y capacitaciones de Alura son aptos para profesionales de todo etapas de su carrera, desde principiante hasta avanzado.</p>
+            </details>
+            <div class="puntero"></div>
+        </div>
+        <div>
+        <details class="d2">
+            <summary>02. ¿Cuáles son los métodos de pago?</summary>
+            <p>Aceptamos tarjetas de crédito con cuotas de hasta 12 cuotas sin interés, compras al contado vía Pix o Boleto. Y si eres cliente de Nubank, también podrás pagar hasta en 24 cuotas o tener un límite extra en tu tarjeta de crédito usando NuPay.</p>
+        </details>
+        <div class="puntero"></div>
+    </div>
+    <div>
+        <details class="d3">
+            <summary>03. No me gusta, ¿puedo cancelar?</summary>
+            <p>Sí, tenemos la opción de cancelación gratuita dentro de los 7 días posteriores a la compra.</p>
+        </details>
+        <div class="puntero"></div>
+    </div>
+    <div>
+        <details class="d4">
+            <summary>04. Aún tengo dudas, ¿qué hago?</summary>
+            <p>Entendemos que la elección de desarrollarse involucra varios factores. Y puedes contar con algunos canales de Alura: El Centro de ayuda donde recopilamos respuestas a preguntas frecuentes y brindamos información detallada sobre diversos temas. Pero si prefieres hablar con alguien, puedes enviarnos un correo electrónico a contato@alura.com.br o llamarnos vía Whatsapp (11) 98451-0258</p>
+        </details>
+        <div class="puntero"></div>
+    </div>
+    </section>
+
+        <section class="contenedor-separador">
+            <div class="separador"></div>
+    </section>
+    {% include 'includes/footer-home.html' %}
+</body>
+</html>
