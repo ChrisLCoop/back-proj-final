@@ -1,0 +1,598 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="cont maincont">
+  <ul class="b-crumbs">
+    <li><a href="/">INICIO</a></li>
+    <li><a href="/cursos">CURSOS</a></li>
+    <li>Curso</li>
+  </ul>
+  <article>
+    <div class="prod">
+      <div class="prod-slider-wrap prod-slider-shown">
+        <div class="flexslider prod-slider" id="prod-slider">
+          <ul class="slides">
+            {% for cursimg in curso.cursoimagen_set.all %}
+            <li>
+              <a
+                data-fancybox-group="prod"
+                class="fancy-img"
+                href="{{cursimg.imagen.url}}"
+                ><img src="{{cursimg.imagen.url}}" alt="" />
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <div class="prod-slider-count">
+            <p>
+              <span class="count-cur">1</span> /
+              <span class="count-all">2</span>
+            </p>
+            <p class="hover-label prod-slider-zoom">
+              <i class="icon ion-search"></i><span>Zoom In</span>
+            </p>
+          </div>
+        </div>
+        <div class="flexslider prod-thumbs" id="prod-thumbs">
+          <ul class="slides">
+            {% for cursimg in curso.cursoimagen_set.all %}
+            <li>
+              <img src="{{cursimg.imagen.url}}" alt="" />
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="prod-cont">
+        <div class="prod-rating-wrap">
+          <p data-rating="4" class="prod-rating">
+            <i class="rating-ico" title="1"></i
+            ><i class="rating-ico" title="2"></i
+            ><i class="rating-ico" title="3"></i
+            ><i class="rating-ico" title="4"></i
+            ><i class="rating-ico" title="5"></i>
+          </p>
+          <p class="prod-rating-count">{{curso.popularidad}}</p>
+        </div>
+        <p class="prod-categs">
+          <a href="/cursos">{{curso.categoria.nombre}}</a>,
+          <a href="/cursos">{{curso.area.nombre}}</a>
+        </p>
+        <h1>{{curso.curso}}</h1>
+        <div class="variations_form cart">
+          <p class="prod-price">S/.{{curso.precio}}</p>
+          <p class="prod-excerpt">
+            {{curso.descripcion}} <!--<a
+              id="prod-showdesc"
+              class="prod-excerpt-more"
+              href="#"
+              >read more</a
+            >-->
+          </p>
+          <div class="prod-add">
+            <form action="/carrito/add/{{curso.id}}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="button">
+                <i class="icon ion-android-cart"></i> Agregar al Carrito
+              </button>
+              <!--
+              <p class="qnt-wrap prod-li-qnt">
+                <a href="#" class="qnt-plus prod-li-plus"
+                  ><i class="icon ion-arrow-up-b"></i
+                ></a>
+                <input type="text" value="1" name="cantidad" />
+                <a href="#" class="qnt-minus prod-li-minus"
+                  ><i class="icon ion-arrow-down-b"></i
+                ></a>
+              </p>
+              <div class="prod-li-favorites">
+                <a href="wishlist.html" class="hover-label add_to_wishlist"
+                  ><i class="icon ion-heart"></i><span>Add to Wishlist</span></a
+                >
+              </div>-->
+            </form>
+          </div>
+        </div>
+        <div class="prod-props">
+          <dl class="product_meta">
+            <dt>Cod.Curso:</dt>
+            <dd>{{curso.sku}}</dd>
+            <dt>Área:</dt>
+            <dd><a href="#">{{curso.area}}</a></dd>
+            <dt>Horas:</dt>
+            <dd>{{curso.duracion}}</dd>
+            <dt>Estudiantes:</dt>
+            <dd>{{curso.estudiantes}}</dd>
+            <dt>Idioma:</dt>
+            <dd>{{curso.idioma}}</dd>
+            <dt>Dificultad</dt>
+            <dd>{{curso.dificultad}}</dd>
+            <dt>Profesor:</dt>
+            <dd>{{curso.profesor}}</dd>
+            <dt>F. Apertura:</dt>
+            <dd>{{curso.fecha_lanzamiento}}</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </article>
+  <!--
+  <div class="prod-tabs-wrap">
+    <ul class="prod-tabs">
+      <li id="prod-desc" class="active" data-prodtab-num="1">
+        <a data-prodtab="#prod-tab-1" href="#">Descripcion</a>
+      </li>
+      <li data-prodtab-num="2" id="prod-props">
+        <a data-prodtab="#prod-tab-2" href="#">Lo que aprenderás!</a>
+      </li>
+    </ul>
+    <div class="prod-tab-cont">
+      <p
+        data-prodtab-num="1"
+        class="prod-tab-mob active"
+        data-prodtab="#prod-tab-1"
+      >
+        Description
+      </p>
+      <div class="prod-tab page-styling prod-tab-desc" id="prod-tab-1">
+        <p>{{curso.descripcion}}</p>
+      </div>
+      <div class="prod-tab" id="prod-tab-2">
+        <p>-{{curso.nota_a}}</p>
+        <br>
+        <p>-{{curso.nota_b}}</p>
+        <br>
+        <p>-{{curso.nota_c}}</p>
+        
+        <dl class="prod-tab-props">
+          <dt>Weight</dt>
+          <dd>1 kg</dd>
+          <dt>Dimensions</dt>
+          <dd>4 x 50 cm</dd>
+          <dt>Сolor</dt>
+          <dd>
+            <p><a href="#">Blue</a>, <a href="#">Green</a></p>
+          </dd>
+          <dt>Manufacturer</dt>
+          <dd>
+            <p><a href="#">Germany</a></p>
+          </dd>
+          <dt>Material</dt>
+          <dd>
+            <p><a href="#">Metall</a>, <a href="#">Plastic</a></p>
+          </dd>
+        </dl>
+      </div>
+      <p data-prodtab-num="3" class="prod-tab-mob" data-prodtab="#prod-tab-3">
+        Reviews (7)
+      </p>
+    </div>
+  </div>-->
+  
+</div>
+<div class="container">
+  <div class="container d-flex flex-column align-items-center">
+    <h2>Lo que aprenderás</h2>
+    <div class="container d-flex justify-content-between ">
+      <ul class="list-group">
+        <li class="list-group-item border-0">{{curso.nota_a}}</li>
+        <li class="list-group-item border-0">{{curso.nota_b}}</li>
+        <li class="list-group-item border-0">{{curso.nota_c}}</li>
+        <li class="list-group-item border-0">{{curso.nota_d}}</li>
+        <li class="list-group-item border-0">{{curso.nota_e}}</li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item border-0">{{curso.nota_f}}</li>
+        <li class="list-group-item border-0">{{curso.nota_g}}</li>
+        <li class="list-group-item border-0">{{curso.nota_h}}</li>
+        <li class="list-group-item border-0">{{curso.nota_i}}</li>
+        <li class="list-group-item border-0">{{curso.nota_j}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="container-fluid d-flex flex-column align-items-center">
+    <h2>Este curso incluye:</h2>
+    <div class="container d-flex justify-content-between">
+      <ul class="list-group">
+        <li class="list-group-item border-0">{{curso.inclu_a}}</li>
+        <li class="list-group-item border-0">{{curso.inclu_b}}</li>
+        <li class="list-group-item border-0">{{curso.inclu_c}}</li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item border-0">{{curso.inclu_d}}</li>
+        <li class="list-group-item border-0">{{curso.inclu_e}}</li>
+        <li class="list-group-item border-0">{{curso.inclu_f}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="container-fluid fw-bold">
+    <h2>Contenido del curso</h2>
+    <br>
+    <div class="container-fluid">
+      <p>10 Sesiones de °30 clases °{{curso.duracion}} Horas de duracion en total</p>
+      <br>
+    </div>
+    <div class="container">
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="container-fluid ">
+                  <div class="container-fluid">
+                    <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_a}}</span>
+                  </div>
+                  <div class="container-fluid">
+                    <span class="text-dark"> > °3 clases con duracion de: °45 min</span>
+                  </div>
+                </div>
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalScrollable">
+                  <p>{{curso.seccion_a_detalle_a}}</p>
+                </button>
+                <br>
+                <a href="" class="text-dark ">°{{curso.seccion_a_detalle_b}}</a>
+                <br>
+                <p class="text-dark">°{{curso.seccion_a_detalle_c}}</p>
+              </div>
+              <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalScrollableTitle">{{curso.seccion_conten_titulo_a}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Contenido</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Video Gratuito 1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Video Gratuito 2</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="container d-flex justify-content-center">
+                            <iframe width="470" height="315" src="https://www.youtube.com/embed/G4KP5iF7Yu0?si=dKxdk_cHTrGGn5QB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                          <div class="container d-flex justify-content-center">
+                            <iframe width="470" height="315" src="https://www.youtube.com/embed/eOzUROuaU74?si=W_VrOV2gWa6MUcXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                          <div class="container d-flex justify-content-center">
+                            <iframe width="470" height="315" src="https://www.youtube.com/embed/XNuodwUlPUo?si=3P42CjOrck7XaPEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div class="container">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_b}}</span>
+                  <span class="text-dark"> > °5 clases °35 min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalScrollable2">
+                  {{curso.seccion_b_detalle_a}}
+                </button>
+                <br>
+                <p>°{{curso.seccion_b_detalle_b}}</p>
+                <br>
+                <p>°{{curso.seccion_b_detalle_c}}</p>
+                <br>
+                <p>°{{curso.seccion_b_detalle_d}}</p>
+                <br>
+                <p>°{{curso.seccion_b_detalle_e}}</p>
+              </div>
+              <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalScrollableTitle">{{curso.seccion_conten_titulo_b}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#ctr1" role="tab" aria-controls="ctr1" aria-selected="true">Contenido</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#ctr2" role="tab" aria-controls="ctr2" aria-selected="false">Video Gratuito 1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#ctr3" role="tab" aria-controls="ctr3" aria-selected="false">Video Gratuito 2</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="ctr1" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="container d-flex justify-content-center">
+                            <iframe width="470" height="315" src="https://www.youtube.com/embed/5CcZ4ULT1Eo?si=sWBpq1HUPPS9IWjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="ctr2" role="tabpanel" aria-labelledby="profile-tab">
+                          <div class="container d-flex justify-content-center">
+                            <iframe width="470" height="315" src="https://www.youtube.com/embed/ZZ5LpwO-An4?si=AL4xYEN9qN9siuUG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="ctr3" role="tabpanel" aria-labelledby="contact-tab">
+                          <div class="container d-flex justify-content-center">
+                            <iframe width="470" height="315" src="https://www.youtube.com/embed/eOzUROuaU74?si=W_VrOV2gWa6MUcXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span  class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_c}}</span>
+                  <span  class="text-dark"> > °3 clases °45min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p class="text-dark">°{{curso.seccion_c_detalle_a}}</p>
+                <br>
+                <p class="text-dark">°{{curso.seccion_c_detalle_b}}</p>
+                <br>
+                <p class="text-dark">°{{curso.seccion_c_detalle_c}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseD" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_d}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseD" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p class="text-dark">°{{curso.seccion_d_detalle_a}}</p>
+                <br>
+                <p class="text-dark">°{{curso.seccion_d_detalle_b}}</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseE" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_e}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseE" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p>°{{curso.seccion_e_detalle_a}}</p>
+                <br>
+                <p>°{{curso.seccion_e_detalle_b}}</p>
+                <br>
+                <p>°{{curso.seccion_e_detalle_c}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseF" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_f}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseF" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p>°{{curso.seccion_f_detalle_a}}</p>
+                <br>
+                <p>°{{curso.seccion_f_detalle_b}}</p>
+                
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseG" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_g}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseG" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p>°{{curso.seccion_g_detalle_a}}</p>
+                <br>
+                <p>°{{curso.seccion_g_detalle_b}}</p>
+                <br>
+                <p>°{{curso.seccion_g_detalle_c}}</p>
+                
+              </div>   
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseH" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_h}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseH" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p>°{{curso.seccion_h_detalle_a}}</p>
+                <br>
+                <p>°{{curso.seccion_h_detalle_b}}</p>
+                <br>
+                <p>°{{curso.seccion_h_detalle_c}}</p>
+                <br>
+                <p>°{{curso.seccion_h_detalle_d}}</p>
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseI" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_i}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseI" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p>°{{curso.seccion_i_detalle_a}}</p>
+                <br>
+                <p>°{{curso.seccion_i_detalle_b}}</p>
+                <br>
+                <p>°{{curso.seccion_i_detalle_c}}</p>
+                <br>
+                <p>°{{curso.seccion_i_detalle_d}}</p>
+              </div>   
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseJ" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container d-flex">
+                  <span class="text-dark font-weight-bold">{{curso.seccion_conten_titulo_j}}</span>
+                  <span class="text-dark"> > °3 clases °40min</span>
+                </div>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseJ" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container d-flex flex-column">
+                <p>°{{curso.seccion_j_detalle_a}}</p>
+                
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container container-fluid d-flex justify-content-center">
+  <div class="">
+  <h3 id="comments-section" class="form-label">Comentario</h3>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.as_p }}
+      <button class="btn  btn-primary" type="submit">Enter</button>
+    </div>
+  </form>
+  </div>
+</div>
+
+{% for comentarios in post.context.all %}
+  <div class="container">
+    <h2 class="mt-4 mb-4">Reseñas de Clientes</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ comentarios.author.username }}</td>
+                    <td>{{ comentarios.fecha_comentario }}</td>
+                    <td>{{ comentarios.content }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

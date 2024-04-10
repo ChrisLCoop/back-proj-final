@@ -1,0 +1,72 @@
+{% load static %}
+<div class="site-header">
+  <p class="h-logo">
+    <a href="/"><img class="logo-alura-carrito-d" src="{% static 'img/img-home/alura-logo-carrito.png' %}" alt="MultiShop" /></a>
+  </p>
+  <!--
+No Space
+-->
+  <div class="h-shop">
+    <form method="get" action="#" class="h-search" id="h-search">
+      <input type="text" placeholder="Search..." />
+      <button type="submit"><i class="ion-search"></i></button>
+    </form>
+
+    <ul class="h-shop-links">
+      <li class="h-search-btn" id="h-search-btn">
+        <i class="ion-search"></i>
+      </li>
+      <!--
+      <li class="h-shop-icon h-wishlist">
+        <a title="Wishlist" href="wishlist.html">
+          <i class="ion-heart"></i>
+          <span>5</span>
+        </a>
+      </li>
+      <li class="h-shop-icon h-compare">
+        <a title="Compare List" href="compare.html">
+          <i class="ion-arrow-swap"></i>
+          <span>2</span>
+        </a>
+      </li>-->
+      <li class="h-shop-icon h-profile">
+        <a href="/cuenta" title="My Account">
+          <i class="ion-android-person"></i>
+        </a>
+        <ul class="h-profile-links">
+          <li><a href="/login">Ingresar</a></li>
+          <li><a href="/salir">Salir</a></li>
+        </ul>
+      </li>
+
+      {% include 'includes/header_carrito.html' %}
+
+      <li class="h-menu-btn" id="h-menu-btn">
+        <i class="ion-navicon"></i> Menu
+      </li>
+    </ul>
+  </div>
+  <!--
+No Space
+-->
+  <div class="mainmenu">
+    <nav id="h-menu" class="h-menu">
+      <ul>
+        <li>
+          <a href="/">INICIO</a>
+        </li>
+        <li>
+          <a href="/cursos">CURSOS</a>
+        </li>
+        <li>
+          <a href="#">EMPRESAS</a>
+        </li>
+        <li>
+          <a href="/mis_compras">Mis Compras</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!--
+No Space
+--></div>
